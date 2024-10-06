@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
-const Navbar = ({ mail, logout }) => {
+const Navbar = ({ user, logout }) => {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const Navbar = ({ mail, logout }) => {
             >
               Blog
             </Link>
-            {!mail ? (
+            {!user ? (
               <Link href="/login">
                 <button
                   type="button"
@@ -120,7 +120,7 @@ const Navbar = ({ mail, logout }) => {
                 Logout
               </button>
             )}
-            {mail &&
+            {user &&
             <Link href={'/myposts'}>
             <p className='text-xl cursor-pointer dark:text-white text-gray-700 border-2 border-blue-600 px-3 py-2 font-mono rounded-3xl'>My Posts</p>
             </Link>

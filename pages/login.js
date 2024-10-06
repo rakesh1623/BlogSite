@@ -25,7 +25,7 @@ const login = () => {
     } 
   }
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword); // Toggle the state
+    setShowPassword(!showPassword); 
   };
 
   const handleSubmit= async (e)=>{
@@ -40,12 +40,13 @@ const login = () => {
   });
   let response  = await res.json()
 
-  if(response.success){
-    console.log(response.token)
+  if(response.success && response.verify){
+
     localStorage.setItem('token',response.token);
     setEmail('')
     setPassword('')
     localStorage.setItem("email",email);
+    localStorage.setItem("userLoggedIn","True")
     document.cookie = `email=${email}; path=/; max-age=86400;`;
   toast.success('successfully logged in', {
     position: "top-center",
@@ -61,7 +62,21 @@ const login = () => {
       
       router.push('/')
     }, 500);
-  }else{
+  }
+  else if(response.verify == false){
+    toast.warn('Your email is not verified', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+     
+      });
+  }
+  else{
     toast.error('Invalid Crendetials', {
       position: "top-center",
       autoClose: 1000,

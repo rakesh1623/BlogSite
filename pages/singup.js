@@ -26,7 +26,7 @@ const singup = () => {
       }
 
       const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword); // Toggle the state
+        setShowPassword(!showPassword); 
       };
       const handleSubmit= async (e)=>{
         e.preventDefault()
@@ -57,9 +57,12 @@ const singup = () => {
         progress: undefined,
         theme: "light",
         });
+
+        localStorage.setItem("email",email);
+
         setTimeout(() => {
       
-          router.push('/login')
+          router.push('/otpVerify')
         }, 500);
       }else{
         toast.success('Your creation failed !', {

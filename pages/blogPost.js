@@ -94,8 +94,6 @@ const BlogPost = ({ initialUser }) => {
         const data = await response.json();
 
         if (response.ok) {
-          console.log('Form submitted successfully:', data);
-
           setTitle("");
           setCategory("");
           setContent("");
@@ -131,7 +129,8 @@ const BlogPost = ({ initialUser }) => {
         console.error('An error occurred while submitting the form:', error);
       }
     } else {
-      console.log('Validation failed.');
+      alert("Validation failed.")
+  
     }
   };
 

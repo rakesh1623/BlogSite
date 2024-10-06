@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-
-
 // Define the blog schema
 const blogSchema = new mongoose.Schema({
     author: { type: String, required: true },    // Blog author

@@ -3,7 +3,7 @@ import Image from 'next/image'
 const about = () => {
   return (
     <div className="bg-white dark:bg-gray-900 min-h-screen py-10 px-5 lg:px-20">
-    {/* Header Section */}
+
     <header className="text-center mb-12">
       <h1 className="text-5xl font-bold text-gray-900 dark:text-white">About Us</h1>
       <p className="text-xl mt-4 text-gray-600 dark:text-gray-300">
@@ -11,7 +11,6 @@ const about = () => {
       </p>
     </header>
 
-    {/* Introduction Section */}
     <section className="flex flex-col lg:flex-row items-center justify-between gap-10 mb-12">
       <div className="lg:w-1/2">
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-4">Our Story</h2>
@@ -23,7 +22,6 @@ const about = () => {
         </p>
       </div>
 
-      {/* Image Section */}
       <div className="lg:w-1/2">
         <Image
           src="/images/blogone.jpg"
@@ -35,7 +33,6 @@ const about = () => {
       </div>
     </section>
 
-    {/* Highlight Categories Section */}
     <section className="mb-12">
       <h2 className="text-3xl font-semibold text-center text-gray-900 dark:text-white mb-8">What We Cover</h2>
 
@@ -56,7 +53,6 @@ const about = () => {
       </div>
     </section>
 
-    {/* Mission Statement Section */}
     <section className="bg-gray-100 dark:bg-gray-800 py-10 rounded-lg shadow-lg">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>

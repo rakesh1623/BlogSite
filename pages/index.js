@@ -5,7 +5,6 @@ import harsh from "@/data/harsh";
 
 export default function Home() {
 
-    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
@@ -38,8 +37,6 @@ export default function Home() {
 
             <p className='text-4xl text-center dark:text-white  font-semibold text-gray-900 my-10 '>Blog Categories</p>
 
-
-            {/* Responsive Grid Layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 mx-5 lg:mx-20 ">
                 {[
                     { title: "Business Blog", description: "Explore the latest in technology, from AI to VR. The future is now!", link: "/businessBlog" },

@@ -8,14 +8,12 @@ const handler = async(req,res)=>{
     if (req.method === 'POST') {
         const { author, title, category, content,message } = req.body;
 
-        console.log(author, title , category , content, message);
-        // Basic server-side validation
         if (!author || !title || !category || !content || !message) {
           return res.status(400).json({ error: 'All fields are required.' });
         }
     
         try {
-          // Create a new blog post instance
+
           const newBlog = new Blog({
             author,
             title,
@@ -23,8 +21,7 @@ const handler = async(req,res)=>{
             content,
             message
           });
-    
-          // Save the blog post to the database
+
           const savedBlog = await newBlog.save();
     
           return res.status(201).json({ success: true, blog: savedBlog });
@@ -32,7 +29,7 @@ const handler = async(req,res)=>{
           return res.status(500).json({ error: 'Failed to create blog post', details: error.message });
         }
       } else {
-        // If it's not a POST request, return method not allowed
+
         return res.status(405).json({ error: 'Method not allowed' });
       }
 
